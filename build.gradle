@@ -1,0 +1,56 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.4.1'
+	id 'io.spring.dependency-management' version '1.1.7'
+}
+
+group = 'springBoot-springSecurity'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(17)
+	}
+}
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	// 테스트
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+	// jpa
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	// thymeleaf
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	// validation
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
+	// web
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	// 개발자 도구  auto 리부팅
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	// mysql driver   DB 설정
+	runtimeOnly 'com.mysql:mysql-connector-j'
+	// lombok
+	annotationProcessor 'org.projectlombok:lombok'
+	compileOnly 'org.projectlombok:lombok'
+	// 쿼리 파라미터 남기기 스프링부트3.XX 이상
+	implementation 'com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.9.0'
+
+	// security
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	testImplementation 'org.springframework.security:spring-security-test'
+	implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity6'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
