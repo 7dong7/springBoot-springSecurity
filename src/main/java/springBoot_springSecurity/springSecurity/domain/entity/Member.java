@@ -1,4 +1,4 @@
-package springBoot_springSecurity.springSecurity.entity;
+package springBoot_springSecurity.springSecurity.domain.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
