@@ -8,8 +8,8 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
-@Configuration
-@EnableWebSecurity
+//@Configuration
+//@EnableWebSecurity
 public class SecurityConfig {
     // 소스 리스트
     private static final String[] SOURCE_LIST = {"/resource/**", "/css/**", "/js/**", "/img/**", "/fonts/**", "/*.ico"};
