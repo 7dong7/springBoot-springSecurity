@@ -8,9 +8,9 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import springBoot_springSecurity.springSecurity.repository.user.UserRepository;
 
-@Service
-@RequiredArgsConstructor
 @Slf4j
+@RequiredArgsConstructor
+@Service
 public class UserDetailService implements UserDetailsService {
 
     private final UserRepository userRepository;

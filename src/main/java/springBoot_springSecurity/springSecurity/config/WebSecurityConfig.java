@@ -15,9 +15,10 @@ import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 import springBoot_springSecurity.springSecurity.service.UserDetailService;
 
-@Configuration
-@EnableWebSecurity // 스프링 시큐리티에서 웹 보안을 활성화하겠다는 뜻
+
 @RequiredArgsConstructor
+@EnableWebSecurity // 스프링 시큐리티에서 웹 보안을 활성화하겠다는 뜻
+@Configuration
 public class WebSecurityConfig {
 
     private final UserDetailService userDetailService;
@@ -37,7 +38,7 @@ public class WebSecurityConfig {
                 .authorizeHttpRequests(auth -> auth // 3. 인증, 인가 설정
                         .requestMatchers(
                                 new AntPathRequestMatcher("/login"),
-                                new AntPathRequestMatcher("/signip"),
+                                new AntPathRequestMatcher("/signup"),
                                 new AntPathRequestMatcher("/user")
                         ).permitAll()
                         .anyRequest().authenticated()
