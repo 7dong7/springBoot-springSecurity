@@ -22,7 +22,7 @@ public class LoginController {
     public String loginAction(@ModelAttribute("loginForm") LoginForm loginForm) {
         log.info("loginForm: {}", loginForm);
 
-        return "login/loginForm";
+        return "redirect:/login";
     }
 
     // 로그인 form 에서 클라이언트에게 받을 정보

@@ -7,13 +7,14 @@
     <title>로그인</title>
     <!-- css -->
     <link rel="stylesheet" href="/css/login/loginForm.css"/>
+    <csrf disabled="true" />
 </head>
 
 <body>
     <main class="layout-main">
         <div class="signup-container" >
             <h1>로그인</h1>
-            <form class="signup-form" action="/loginAction" th:action method="POST" th:object="${loginForm}">
+            <form class="signup-form" th:action="@{/loginAction}" method="post" th:object="${loginForm}">
                 <!-- 아이디 -->
                 <div>
                     <label for="username">아이디</label>
