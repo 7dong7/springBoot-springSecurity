@@ -25,4 +25,15 @@ public class UserService {
                         .build()).getId();
     }
 
+    // 사용자 찾기 by userId
+    public User findById(Long userId) {
+        return userRepository.findById(userId)
+                .orElseThrow(() -> new IllegalArgumentException("사용자를 찾을 수 없음: " +userId));
+    }
+
+    // 사용자 찾기 by Email
+    public User findByEmail(String email) {
+        return userRepository.findByEmail(email)
+                .orElseThrow(() -> new IllegalArgumentException("사용자를 찾을 수 없음: " +email));
+    }
 }
