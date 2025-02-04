@@ -52,9 +52,13 @@ public class TokenProvider {
     // 2. 토큰 유효성 검증 메소드
     public boolean validToken(String token) {
         try {
-            Jwts.parser()
-                    .setSigningKey(jwtProperties.getSecretKey()) // 비밀값으로 복호화
+            Jwts.parserBuilder()
+                    .setSigningKey(jwtProperties.getSecretKey())
+                    .build()
                     .parseClaimsJws(token);
+//            Jwts.parser()
+//                    .setSigningKey(jwtProperties.getSecretKey()) // 비밀값으로 복호화
+//                    .parseClaimsJws(token);
             return true;
         } catch (Exception e) { // 복호화 과정에서 에러가 나면 유효하지 않은 토큰
             return false;
