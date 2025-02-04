@@ -15,7 +15,7 @@ spring:
 
 jwt:
   issuer: ajufresh@gmail.com
-  secret_key: study_springboot
+  secret_key: opakjdasmfqasqrqhohasjndmzncojowqijeoiqjdnufnwejqp
 
 logging.level:
   org.hibernate.SQL: debug
